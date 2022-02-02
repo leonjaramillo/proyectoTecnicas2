@@ -25,6 +25,31 @@ public class Circulo extends Figura {
     public double perimetro() {
         return 2*Math.PI*radio;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 79 * hash + (int) (Double.doubleToLongBits(this.radio) ^ (Double.doubleToLongBits(this.radio) >>> 32));
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Circulo other = (Circulo) obj;
+        if (Double.doubleToLongBits(this.radio) != Double.doubleToLongBits(other.radio)) {
+            return false;
+        }
+        return true;
+    }
     
     
 }

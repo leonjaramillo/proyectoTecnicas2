@@ -4,6 +4,11 @@ public class TrianguloRectangulo extends Triangulo {
     private double base;
     private double altura;
 
+    public TrianguloRectangulo(double base, double altura) {
+        this.base = base;
+        this.altura = altura;
+    }
+
     public double getBase() {
         return base;
     }

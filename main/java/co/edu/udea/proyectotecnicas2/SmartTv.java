@@ -18,6 +18,18 @@ public class SmartTv extends Televisor {
         aplicacionesInstaladas[3] = "Disney+";
     }
     
+    public SmartTv(String marca) {
+        super(false,marca,"blanco",0,0,40,0);
+        conectadoInternet = false;
+        aplicacionAbierta = "menú";
+        sistemaOperativo = "Android TV";
+        aplicacionesInstaladas = new String[4];
+        aplicacionesInstaladas[0] = "menú";
+        aplicacionesInstaladas[1] = "Netflix";
+        aplicacionesInstaladas[2] = "Amazon Prime";
+        aplicacionesInstaladas[3] = "Disney+";
+    }
+    
     @Override
     public void encender() {
         super.encender();
@@ -54,8 +66,25 @@ public class SmartTv extends Televisor {
         reiniciarAlInstalar();
     }
     
+    public void instalarAplicacion(String app) {
+        aplicacionesInstaladas[aplicacionesInstaladas.length - 1] = app;
+        reiniciarAlInstalar();
+    }
+    
+    public void instalarAplicacion() {
+        aplicacionesInstaladas[aplicacionesInstaladas.length - 1] = "Ude@";
+        reiniciarAlInstalar();
+    }
+    
     private void reiniciarAlInstalar() {
         this.apagar();
         this.encender();
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " // SmartTv{" + "conectadoInternet=" + conectadoInternet + ", aplicacionAbierta=" + aplicacionAbierta + ", sistemaOperativo=" + sistemaOperativo + ", aplicacionesInstaladas=" + aplicacionesInstaladas + '}';
+    }
+    
+    
 }

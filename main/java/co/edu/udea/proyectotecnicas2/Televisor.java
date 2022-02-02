@@ -120,7 +120,10 @@ public class Televisor {
     public static String getDerechos() {
         return "Todos los derechos reservados";
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Televisor{" + "encendido=" + encendido + ", marca=" + marca + ", color=" + color + ", volumen=" + volumen + ", canalActual=" + canalActual + ", pulgadas=" + pulgadas + ", volumenPrevio=" + volumenPrevio + '}';
+    }
     
 }

@@ -34,6 +34,35 @@ public class Rectangulo extends Figura {
     public double perimetro() {
         return (largo*2)+(ancho*2);
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.largo) ^ (Double.doubleToLongBits(this.largo) >>> 32));
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.ancho) ^ (Double.doubleToLongBits(this.ancho) >>> 32));
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Rectangulo other = (Rectangulo) obj;
+        if (Double.doubleToLongBits(this.largo) != Double.doubleToLongBits(other.largo)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.ancho) != Double.doubleToLongBits(other.ancho)) {
+            return false;
+        }
+        return true;
+    }
     
     
     
