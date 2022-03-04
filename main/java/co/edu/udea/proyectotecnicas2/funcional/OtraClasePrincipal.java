@@ -58,14 +58,16 @@ public class OtraClasePrincipal {
         
         System.out.println(suma);*/
         
-        //1 
-        
-        /*double x = 2;
-        double euler = DoubleStream.of(1, 2, 3, 4,5 ,6 ,7, 8).reduce(1, (i, j) -> (Math.pow(x, i) / factorial(i)) + (Math.pow(x, j) / factorial(j)));
-        System.out.println(euler);*/
+        //1
         
         
-        List<Estudiante> estudiantes = new ArrayList<>();
+        double x = 2;
+        double euler = DoubleStream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12).reduce(1, (acumulador, elementoActual) -> acumulador + (Math.pow(x, elementoActual) / factorial(elementoActual)));
+        System.out.println(euler);
+        System.out.println(Math.E * Math.E);
+        
+        
+        /*List<Estudiante> estudiantes = new ArrayList<>();
         
         estudiantes.add(new Estudiante(1, "Juan", "Pérez", "uno@hotmail.com", "1234"));
         estudiantes.add(new Estudiante(2, "Pedro", "Pérez", "uno@hotmail.com", "1234"));
@@ -77,13 +79,13 @@ public class OtraClasePrincipal {
         
         Stream<Estudiante> streamEstudiantes = estudiantes.stream();
         
-        streamEstudiantes.filter(e -> e.getCedula() > 3).forEach(e -> System.out.println(e));
+        streamEstudiantes.filter(e -> e.getCedula() > 3).forEach(e -> System.out.println(e));*/
         
     }
     
-    /*static double factorial(double n) {
+    static double factorial(double n) {
         return IntStream.rangeClosed(1, (int)n).reduce(1, (i, j) -> i * j);
-    }*/
+    }
     
     
     
